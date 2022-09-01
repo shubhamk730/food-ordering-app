@@ -1,10 +1,19 @@
 const express = require("express");
 const adminController = require("../controllers/adminController");
+const verifyTokenAdmin = require("../middleware/verifyToken");
 
 const router = express.Router();
 
-router.post("/add-product", adminController.addProduct);
+router.post("/add-product", verifyTokenAdmin, adminController.addProduct);
 
-router.delete("/delete/:prodId", adminController.deleteProduct);
+router.get("/products", verifyTokenAdmin, adminController.getAllProducts);
+
+router.post("/delete", verifyTokenAdmin, adminController.deleteProduct);
+
+router.get("/products/:prodId", verifyTokenAdmin, adminController.getProduct);
+
+router.post("/signup", adminController.postSignUp);
+
+router.post("/login", adminController.postLogin);
 
 module.exports = router;
