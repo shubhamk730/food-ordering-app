@@ -10,6 +10,8 @@ router.get("/products", verifyTokenAdmin, adminController.getAllProducts);
 
 router.post("/delete", verifyTokenAdmin, adminController.deleteProduct);
 
+router.post("/update", verifyTokenAdmin, adminController.updateProduct);
+
 router.get("/products/:prodId", verifyTokenAdmin, adminController.getProduct);
 
 router.post("/signup", adminController.postSignUp);
