@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Product = require("../models/Product");
 const Admin = require("../models/Admin");
 const bcrypt = require("bcrypt");
-const generateToken = require("../config/generateToken");
+const generateToken = require("../config/generateToken").generateToken;
 
 const saltRounds = 12;
 
