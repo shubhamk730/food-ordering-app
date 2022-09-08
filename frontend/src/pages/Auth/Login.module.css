@@ -1,0 +1,61 @@
+.login-component {
+  margin: 2rem auto;
+  background-color: white;
+  flex-direction: column;
+  height: 280px;
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.form-container {
+  margin-bottom: 10px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.form-element {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.form-element p {
+  margin: 0;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.form-element input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+form > button {
+  width: 76%;
+  margin-left: 12%;
+  background-color: #009ffd;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  height: 30px;
+  color: white;
+}
+
+.forgot-password {
+  width: 90%;
+  padding: 0;
+  margin: 0.5rem;
+}
+
+.forgot-password p {
+  font-size: small;
+  text-align: right;
+  margin: 0%;
+}
