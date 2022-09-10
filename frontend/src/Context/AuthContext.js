@@ -27,8 +27,16 @@ const AuthContextProvider = (props) => {
     return userInfo.token ? true : false;
   };
 
+  const getToken = () => {
+    if (localStorage.getItem("userInfo") == null) return false;
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    return userInfo.token;
+  };
+
   return (
-    <authContext.Provider value={{ Login, Logout, token, isLoggedin }}>
+    <authContext.Provider
+      value={{ Login, Logout, token, isLoggedin, getToken }}
+    >
       {props.children}
     </authContext.Provider>
   );
