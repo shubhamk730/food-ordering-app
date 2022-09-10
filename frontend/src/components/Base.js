@@ -4,7 +4,7 @@ import Navbar from "./Navbar/Navbar";
 const Base = (props) => {
   const styles = props.styles || "";
   return (
-    <div style={{ height: "100vh", ...styles }}>
+    <div style={{ minHeight: "100vh", ...styles, margin: 0 }}>
       <Navbar />
       {props.children}
     </div>
