@@ -1,0 +1,38 @@
+.card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.7rem;
+  margin: 0.5rem;
+  width: 300px;
+  height: 150px;
+}
+
+.title-info > h3 {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-button {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  background-color: rgb(37, 165, 179);
+  border-radius: 20px;
+  font-size: large;
+  cursor: pointer;
+}
+.delete-button {
+  display: inline-block;
+  width: 40%;
+  color: white;
+  background-color: rgb(255, 0, 0);
+  text-align: center;
+  border-radius: 20px;
+  font-size: large;
+  cursor: pointer;
+}
