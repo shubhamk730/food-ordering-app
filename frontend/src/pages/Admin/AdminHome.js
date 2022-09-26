@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Base from "../../components/Base";
-import Backdrop from "../../components/UI/Backdrop/Backdrop";
 import Card from "../../components/UI/Card";
 import { AuthContext } from "../../Context/AuthContext";
 import classes from "./AdminHome.module.css";
@@ -34,11 +33,11 @@ const AdminHome = () => {
         backgroundImage: "linear-gradient(to top right, blue, yellow)",
       }}
     >
-      <Backdrop />
       <div className={classes["products-container"]}>
-        {products.map((product, index) => {
-          return <Card key={index} product={product} />;
-        })}
+        {products &&
+          products.map((product, index) => {
+            return <Card key={index} product={product} />;
+          })}
       </div>
     </Base>
   );
