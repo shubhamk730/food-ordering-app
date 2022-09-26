@@ -1,0 +1,9 @@
+.form-container {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  min-width: 40%;
+  min-height: 40%;
+  background-color: blue;
+  z-index: 1000;
+}
