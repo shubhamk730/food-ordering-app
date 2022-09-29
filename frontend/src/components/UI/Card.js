@@ -5,24 +5,27 @@ import EditFormModal from "./EditForm/EditFormModal";
 const Card = (props) => {
   const { _id, category, title, description, price, imageUrl } = props.product;
   const [showEditModal, setShowEditModal] = useState(false);
+  const product = { ...props };
   // const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const editClickHandler = () => {
+    window.scrollTo(0, 0);
     setShowEditModal(true);
   };
-  console.log(title, category, price);
   return (
     <div className={classes["card"]}>
-      {showEditModal && <EditFormModal id={_id} show={setShowEditModal} />}
+      {showEditModal && (
+        <EditFormModal product={product} show={setShowEditModal} />
+      )}
       <div className={classes["title-info"]}>
         <h3>
           {title} - ${price}
         </h3>
       </div>
-      <div>
-        <img src={imageUrl} alt={title} />
+      <div className={classes["img-container"]}>
+        <img src={imageUrl} alt={title} height="150px" width="60%" />
       </div>
-      <div>{description}</div>
+      <div className={classes["desc-box"]}>{description}</div>
       <div className={classes["button-container"]}>
         <div className={classes["edit-button"]} onClick={editClickHandler}>
           Edit
