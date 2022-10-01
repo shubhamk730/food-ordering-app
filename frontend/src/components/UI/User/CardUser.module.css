@@ -1,0 +1,72 @@
+.card {
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 300px;
+  min-height: 200px;
+  border: 2px solid black;
+}
+
+.title-info > h3 {
+  text-align: center;
+  /* background-color: blue; */
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.desc-box {
+  margin: 5px 2px;
+}
+
+.button-container {
+  padding: 5px;
+}
+
+.img-container {
+  display: flex;
+  background-color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+
+.add-to-cart {
+  margin: 5px 0;
+  padding: 1px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(68, 189, 68);
+  color: white;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.add-to-cart:hover {
+  background-color: white;
+  border: 1px solid green;
+  color: green;
+}
+
+.view-button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 1px;
+  color: white;
+  background-color: rgb(35, 28, 28);
+  text-align: center;
+  font-size: large;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.view-button:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
