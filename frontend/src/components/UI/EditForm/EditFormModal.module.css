@@ -1,9 +1,144 @@
 .form-container {
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 30%;
-  min-width: 40%;
-  min-height: 40%;
-  background-color: blue;
+  min-width: 30%;
+  height: 70%;
+  background-color: beige;
   z-index: 1000;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 1rem;
+}
+
+.edit-form {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* justify-content: center; */
+  height: 50%;
+  margin: 1rem 0;
+}
+
+.form-element textarea {
+  margin-left: 10px;
+  overflow: hidden;
+  resize: none;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+.form-element {
+  font-size: 17px;
+  margin: 0.75rem;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.form-container input {
+  border: none;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.form-container input:focus {
+  border-bottom: 3px solid rgb(7, 7, 7);
+  outline: none;
+  height: 20px;
+}
+
+.submit-btn {
+  background-color: blue;
+  color: white;
+  height: 30px;
+  width: 80px;
+  border-radius: 4px;
+  border: none;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: rgb(62, 124, 216);
+}
+
+.cancel-btn {
+  background-color: red;
+  color: white;
+  height: 30px;
+  width: 80px;
+  border-radius: 4px;
+  border: none;
+}
+
+@media only screen and (max-width: 426px) {
+  .form-container {
+    position: absolute;
+    top: 10%;
+    left: 12%;
+    height: 50%;
+    z-index: 1000;
+  }
+
+  .form-heading {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 20px;
+  }
+
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    margin: 3rem 0;
+  }
+
+  .form-element textarea {
+    margin-left: 5px;
+    overflow: hidden;
+    resize: none;
+    box-sizing: border-box;
+    height: 30px;
+  }
+
+  .form-element {
+    font-size: 15px;
+    margin: 0.2rem;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container input {
+    border: none;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+
+  .form-container input:focus {
+    border-bottom: 3px solid rgb(7, 7, 7);
+    outline: none;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 426px) and (min-width: 376px) {
+  .form-container {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    height: 50%;
+    z-index: 1000;
+  }
 }
