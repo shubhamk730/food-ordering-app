@@ -12,7 +12,9 @@ const AuthContextProvider = (props) => {
       token: authToken,
       username: username,
     });
+    const userCart = JSON.stringify([]);
     localStorage.setItem("userInfo", userInfo);
+    localStorage.setItem("userCart", userCart);
   };
 
   const Logout = () => {
