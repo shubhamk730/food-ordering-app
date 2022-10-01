@@ -29,9 +29,9 @@ const AdminHome = () => {
   }, []);
   return (
     <Base
-      styles={{
-        backgroundImage: "linear-gradient(to top right, blue, yellow)",
-      }}
+    // styles={{
+    //   backgroundImage: "linear-gradient(to top right, blue, purple)",
+    // }}
     >
       <div className={classes["products-container"]}>
         {products &&
