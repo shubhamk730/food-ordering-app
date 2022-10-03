@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import classes from "./EditFormModal.module.css";
 import Backdrop from "../Backdrop/Backdrop";
 import { AuthContext } from "../../../Context/AuthContext";
-import { Navigate } from "react-router-dom";
-
 const BACKEND = process.env.REACT_APP_BACKEND;
 
 const EditModal = (props) => {
