@@ -36,8 +36,7 @@ exports.deleteProduct = (req, res, next) => {
         error.statusCode = 404;
         throw error;
       }
-      console.log("found product", product);
-      return Product.findByIdAndDelete(prodId);
+      return Product.deleteOne({ _id : `${product._id}`})
     })
     .then((data) => {
       res.json({ message: "Product deleted successfully!" });
