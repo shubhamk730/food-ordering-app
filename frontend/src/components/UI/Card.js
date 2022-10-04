@@ -48,7 +48,7 @@ const Card = (props) => {
       <div className={classes["img-container"]}>
         <img src={imageUrl} alt={title} height="150px" width="60%" />
       </div>
-      <div className={classes["desc-box"]}>{description}</div>
+      <div className={classes["desc-box"]}>{description.length > 50 ? description.substring(0, 60) + "..." : description}</div>
       <div className={classes["button-container"]}>
         <div className={classes["edit-button"]} onClick={editClickHandler} >
           Edit
