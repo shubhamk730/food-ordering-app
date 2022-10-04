@@ -1,44 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import AddProduct from "../../components/AdminHomeComponents/AddProduct";
+import Orders from "../../components/AdminHomeComponents/Orders";
+import Products from "../../components/AdminHomeComponents/Products";
+import Users from "../../components/AdminHomeComponents/Users";
 import Base from "../../components/Base";
-import Card from "../../components/UI/Card";
-import { AuthContext } from "../../Context/AuthContext";
-import classes from "./AdminHome.module.css";
+import AdminNav from "../../components/UI/AdminNav/AdminNav";
 
-const BACKEND = process.env.REACT_APP_BACKEND;
 
 const AdminHome = () => {
-  const authContext = AuthContext();
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const token = authContext.getToken();
-    fetch(`${BACKEND}/admin/products`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((result) => {
-        return result.json();
-      })
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const [component, setComponent] = useState("products");
+  
   return (
     <Base
     // styles={{
     //   backgroundImage: "linear-gradient(to top right, blue, purple)",
     // }}
     >
-      <div className={classes["products-container"]}>
-        {products &&
-          products.map((product, index) => {
-            return <Card key={index} product={product} />;
-          })}
-      </div>
+      <AdminNav setComponent = { setComponent } />
+      {component === "products" && <Products setComponent = {setComponent} />}
+      {component === "add-product" && <AddProduct />}
+      {component === "users" && <Users /> }
+      {component === "orders" && <Orders /> }
     </Base>
   );
 };
