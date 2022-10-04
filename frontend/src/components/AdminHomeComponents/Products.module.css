@@ -1,0 +1,17 @@
+.products-container {
+    margin: 1rem auto;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-image: linear-gradient(to top right, blue, yellow); */
+  }
+  
+  @media screen and (max-width: 426px) {
+    /* .products-container {
+      flex-direction: column;
+    } */
+  }
+  
