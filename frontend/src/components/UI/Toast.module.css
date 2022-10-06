@@ -1,0 +1,53 @@
+.info, .succes, .error {
+    position: fixed;
+    min-height: 50px;
+    background-color: red;
+    outline: 2px solid black;
+    border-radius: 10px;
+    top: 50px;
+    right: 50px;
+    z-index: 2000;
+    padding: 0.3rem 1rem;
+}
+
+.info {
+    background-color: rgb(19, 183, 233);
+}
+
+.error {
+    background-color: red;
+}
+
+.succes {
+    background-color: green;
+}
+
+.close-btn {
+    padding: 1px;
+    text-align: right;
+    color: rgb(4, 4, 4);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.title-box{
+    font-size:x-large ;
+    text-align: center;
+    padding: 1px;
+
+}
+
+.msg-box {
+    font-size: larger;
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 426px) {
+    .info, .succes, .error {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        z-index: 2000;
+    }
+    
+}
