@@ -1,0 +1,36 @@
+.admin-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* padding: 0.5rem; */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    margin: 0.5rem 0;
+    background-color: rgb(229, 237, 244);
+}
+
+.nav-link > a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link {
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    /* background-color: red; */
+    font-size: larger;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    /* background-color: rgb(77, 175, 193); */
+    background-color: rgb(77, 175, 193);
+
+}
