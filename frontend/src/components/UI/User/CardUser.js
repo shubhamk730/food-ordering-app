@@ -18,7 +18,7 @@ const Card = (props) => {
       <div className={classes["img-container"]}>
         <img src={imageUrl} alt={title} height="150px" width="60%" />
       </div>
-      <div className={classes["desc-box"]}>{description}</div>
+      <div className={classes["desc-box"]}>{description.length > 100 ? description.substring(0,101) + "..." : description}</div>
       <div className={classes["button-container"]}>
         <div className={classes["add-to-cart"]} onClick={addToCartHandler}>
           Add to cart

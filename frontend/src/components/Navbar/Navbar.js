@@ -55,6 +55,7 @@ const Navbar = () => {
               </Link>
             </li>
           )}
+          {!isAuth && <li><Link to="/signup"> Sign up </Link></li>}
         </ul>
       </div>
     </div>
