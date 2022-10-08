@@ -8,7 +8,6 @@ const saltRounds = 10;
 exports.getAllProducts = (req, res, next) => {
   Product.find()
     .then((data) => {
-      console.log(data);
       res.send(data);
     })
     .catch((err) => {
