@@ -5,6 +5,7 @@ import PrivateRoutes from "./components/PrivateRoutes";
 import AdminHome from "./pages/Admin/AdminHome";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
+import Cart from "./pages/User/Cart";
 import HomePage from "./pages/User/HomePage";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route element={<PrivateRoutes />}>
         <Route element={<AdminHome />} path="/admin/" exact />
         <Route element={<HomePage />} path="/" exact />
+        <Route element={<Cart /> } path="/cart" exact/>
       </Route>
     </Routes>
   );
