@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { CartContext } from "../../../Context/CartContext";
 import classes from "./CardUser.module.css";
+import Toast from "../../UI/Toast";
 
 const Card = (props) => {
-  const { _id, category, title, description, price, imageUrl } = props.product;
+  const { title, description, price, imageUrl } = props.product;
+  // const { _id, category } = props.product
+  const [message, setMessage] = useState();
+  const [showToast, setShowToast] = useState(false);
   const cartContext = CartContext();
 
-  const addToCartHandler = () => {};
+  const addToCartHandler = () => {
+    try{
+      cartContext.addToCart(props.product);
+      setMessage("Successfully added to the cart");
+      setShowToast(true);
+
+    }
+    catch(err){
+      setShowToast(true);
+      setMessage("Failed to add product");
+      setTimeout(() =>{
+        window.location.reload(false)
+      },1500);
+    }
+  };
 
   return (
     <div className={classes["card"]}>
+      {showToast && <Toast close={setShowToast} message={message} /> }
       <div className={classes["title-info"]}>
         <h3>
           {title} - ${price}
