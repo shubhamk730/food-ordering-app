@@ -1,0 +1,112 @@
+.container {
+    width : 80%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.img-container img {
+    height: 150px;
+    width:200px;
+}
+
+.info-container {
+    height: 150px;
+    width: 60%;
+    margin : 0 0.5rem;
+}
+
+.info-container h3 {
+    margin: 0;
+}
+
+.item-title{
+    padding: 0.2rem;
+    font-size: x-large;
+    text-align: center;
+    font-weight: 600;
+}
+
+.item-qty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding:0.2rem;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0.3rem 0.5rem;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn-container div {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-container  div:nth-child(1) {
+    /* background-color: blue; */
+    border: 2px solid black;
+    border-radius: 15px 0 0 15px;
+}
+
+.btn-container div:nth-child(2){
+    border-top: 2px solid black ;
+    border-bottom: 2px solid black ;
+}
+
+.btn-container  div:nth-child(3) {
+    border: 2px solid black;
+    border-radius: 0 15px 15px 0;
+}
+
+
+@media only screen and (min-width: 769px){
+    .container{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .img-container img {
+        height: 80px;
+        width: 110px;
+    }
+    .container {
+        width: 100%;
+    }
+    .info-container {
+        height: 80px;
+    }
+    
+    .info-container {
+        height: 150px;
+        margin : 0 0.5rem;
+    }
+
+    .item-title{
+        padding: 0.2rem;
+        font-size: large;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .item-qty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        padding:0.2rem;
+    }
+}
