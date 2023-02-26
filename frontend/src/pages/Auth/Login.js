@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Base from "../../components/Base";
+import Toast from "../../components/UI/Toast";
 import { AuthContext } from "../../Context/AuthContext";
 import classes from "./Login.module.css";
 
@@ -14,14 +15,28 @@ const Login = () => {
   const nameInputRef = useRef();
   const passwordInputRef = useRef();
 
+  const [message, setMessage] = useState();
+  const [category, setCategory] = useState("");
+  const [showToast, setShowToast] = useState(false);
+
   const isAdminRoute = location.pathname.includes("admin");
   const URL = isAdminRoute ? `${BACKEND}/admin/login` : `${BACKEND}/user/login`;
+
+  useEffect(() =>{
+    if (authContext.isLoggedin()) {
+      navigate(`${isAdminRoute?'/admin/':'/'}`);
+    }
+  },[]);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if (!nameInputRef.current.value || !passwordInputRef.current.value) {
-      throw Error("Enter valid name and password");
+      // throw Error("Enter valid name and password");
+      setMessage("Enter valid email and password");
+      setCategory("error");
+      setShowToast(true);
+      return;
     }
 
     const userEmail = nameInputRef.current.value;
@@ -41,11 +56,24 @@ const Login = () => {
         return res.json();
       })
       .then((data) => {
+        if(data.message) {
+          passwordInputRef.current.value = "";
+          throw new Error("Password failed");
+        }
         authContext.Login(data.token, data.name, data.email);
+        setMessage("Log in successful");
+        setCategory("success");
+        setShowToast(true);
+        
+        setTimeout(() => {
+          authContext.Logout();
+        }, 604800);
         navigate(`${isAdminRoute ? "/admin/" : "/"}`);
       })
       .catch((err) => {
-        console.log(err);
+        setMessage("Email or password Incorrect");
+        setCategory("error")
+        setShowToast(true)
       });
   };
 
@@ -55,6 +83,7 @@ const Login = () => {
         backgroundImage: "linear-gradient(to top right, #009FFD, #2A2A72)",
       }}
     >
+      {showToast && <Toast category = "error" close={setShowToast} message={message} />}
       <div className={classes["login-component"]}>
         <div className={classes["heading"]}>
           <h2>{isAdminRoute ? "Admin Login" : "Login"}</h2>
