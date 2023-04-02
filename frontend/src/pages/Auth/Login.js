@@ -107,7 +107,7 @@ const Login = () => {
                 ref={passwordInputRef}
               />
             </div>
-            <button type="submit">Log in</button>
+            <button type="submit">Login</button>
           </form>
           <div className={classes["forgot-password"]}>
             <Link to="/forgot-password">
