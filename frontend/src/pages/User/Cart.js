@@ -21,7 +21,7 @@ const Cart = () => {
         <h1 className={classes['info-heading']}>Your cart : </h1>
         <div className={classes['container']}>
             
-        { cart.length === 0 && <h1 className={classes['no-items']}> No Items Found in the Cart</h1>} 
+        { cart.length === 0 && <h1 className={classes['no-items']}> No Items Found in the Cart. Please add something to continue.</h1>} 
             {cart.length > 0 && 
                 cart.map((c, index) => {
                     return <CartItem key={index} item = {c} fetchAgain={fetchAgain} />
